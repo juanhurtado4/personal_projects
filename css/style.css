@@ -63,4 +63,19 @@ p {
 	text-align: center;
 	color: #777;
 }
-/** Start Coding Here **/
+/** Modify the links when screen size is small **/
+
+/* if screen size goes below 568px hide the regular big menu */
+@media (min-width: 320px) and (max-width: 568px) {
+	#menu ul {
+		display: none;
+	}
+}
+
+
+/* if screen size is above 568px hide the phone menu  */
+@media (min-width: 568px) {
+	#menu select, #menu button {
+		display: none;
+	}
+}
