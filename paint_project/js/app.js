@@ -1,6 +1,6 @@
 let color = $('.selected').css('background-color');
 
-$('.controls li').click(function() {
+$('.controls').on('click', 'li', function() {
 
     $(this).siblings().removeClass('selected');
 
@@ -22,3 +22,12 @@ function changeColor() {
 }
 
 $('input[type=range]').on('input', changeColor);
+
+$('#addNewColor').click(function() {
+    let $newColor = $('<li></li>')
+    $newColor.css('background-color', $('#newColor').css('background-color'))
+
+    $('.controls ul').append($newColor);
+
+    $newColor.click();
+});
