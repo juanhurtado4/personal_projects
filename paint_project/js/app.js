@@ -8,3 +8,17 @@ $('.controls li').click(function() {
 
     color = $(this).css('background-color');
 });
+
+$('#revealColorSelect').click(function() {
+    changeColor();
+    $('#colorSelect').toggle();
+});
+
+function changeColor() {
+    let r = $('#red').val();
+    let g = $('#green').val();
+    let b = $('#blue').val();
+    $('#newColor').css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')')
+}
+
+$('input[type=range]').change(changeColor);
