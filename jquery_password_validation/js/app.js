@@ -22,6 +22,13 @@ function confirmPasswordEvent() {
     }
 }
 
+$password.focus(function() {
+    passwordEvent();
+    confirmPasswordEvent();
+}).keyup(function() {
+    passwordEvent();
+    confirmPasswordEvent();
+});
 
-$password.focus(passwordEvent).keyup(passwordEvent).focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
 $confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
+
