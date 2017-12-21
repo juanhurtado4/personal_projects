@@ -44,6 +44,7 @@ $canvas.mousedown(function(e){
     context.beginPath();
     context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
     context.lineTo(e.offsetX, e.offsetY);
+    context.strokeStyle = color;
     context.stroke();
     lastEvent = e;
     }
