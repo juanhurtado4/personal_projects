@@ -1,4 +1,5 @@
 let color = $('.selected').css('background-color');
+let context = $('canvas')[0].getContext("2d");
 
 $('.controls').on('click', 'li', function() {
 
@@ -31,3 +32,8 @@ $('#addNewColor').click(function() {
 
     $newColor.click();
 });
+
+context.beginPath();
+context.moveTo(10, 10);
+context.lineTo(20, 10);
+context.stroke();
