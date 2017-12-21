@@ -21,4 +21,4 @@ function changeColor() {
     $('#newColor').css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')')
 }
 
-$('input[type=range]').change(changeColor);
+$('input[type=range]').on('input', changeColor);
