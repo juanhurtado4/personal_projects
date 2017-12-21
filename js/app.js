@@ -7,15 +7,17 @@ $('#menu a').each(function(){
     let $anchor = $(this);
     let $option = $('<option></option>');
 
+    if ($anchor.parent().hasClass('selected')) {
+        $option.prop('selected', true)
+    }
+
     $option.val($anchor.attr('href'));
     $option.text($anchor.text());
 
     $select.append($option);
 });
 
-let $button = $('<button>Go</button>');
-$('#menu').append($button);
 
-$button.click(function(){
+$select.change(function(){
     window.location = $select.val();
 });
