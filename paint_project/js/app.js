@@ -1,5 +1,8 @@
 let color = $('.selected').css('background-color');
-let context = $('canvas')[0].getContext("2d");
+let $canvas = $('canvas')
+let context = $canvas[0].getContext("2d");
+let lastEvent;
+let mouseDown = false;
 
 $('.controls').on('click', 'li', function() {
 
@@ -33,7 +36,20 @@ $('#addNewColor').click(function() {
     $newColor.click();
 });
 
-context.beginPath();
-context.moveTo(10, 10);
-context.lineTo(20, 10);
-context.stroke();
+$canvas.mousedown(function(e){
+    lastEvent = e;
+    mouseDown = true;
+}).mousemove(function(e) {
+    if (mouseDown) {
+    context.beginPath();
+    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.stroke();
+    lastEvent = e;
+    }
+}).mouseup(function() {
+    mouseDown = false;
+});
+
+
+
