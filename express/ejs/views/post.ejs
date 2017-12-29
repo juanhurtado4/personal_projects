@@ -1,0 +1,7 @@
+<h1>Welcome to post page</h1>
+
+<% for (val in post) { %>
+    <% let postTitle = post[val].title %>
+    <% let postAuthor = post[val].author %>
+    <h1> <%= postTitle %> by <em><%= postAuthor %></em> </h1>
+<% } %>
