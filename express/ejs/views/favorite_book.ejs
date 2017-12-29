@@ -1,1 +1,8 @@
 <h1>Your favorite book is: <%= bookName%> </h1>
+
+<% if (bookName === 'Harry Potter') { %>
+    <p>Great choice! Harry Potter is a phenominal book!</p>
+<% } else { %>
+    <p>Have you read Harry Potter?</p>
+    <p>If you haven't I strongly recommend it</p>
+<% } %>
