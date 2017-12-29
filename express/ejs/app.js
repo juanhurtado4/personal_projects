@@ -1,6 +1,13 @@
 let express = require('express');
 let app = express();
 
+// Tells express where to look for stylesheet
+app.use(express.static('public'))
+
+// Tells express that all files extensions will be .ejs
+app.set('view engine', 'ejs')
+
+
 function removeUnderscore(string){
     
     return string.replace('_', ' ').toLowerCase()
@@ -20,26 +27,28 @@ let test = 'juan hurtado'
 let title = toTitleCase(test)
 
 app.get('/', function(req, res){
-    res.render('home.ejs')
+    let pageTitle = 'Home'
+    res.render('home', {'pageTitle': pageTitle})
 });
 
 app.get('/posts', function(req, res){
-    
+    let pageTitle = 'Posts'
     let posts = [
         {title: 'Harry Potter', author: 'J.K. Rowlin'},
         {title: 'Wild', author: 'Cherryl Strayed'},
         {title: 'Game of Thrones', author: 'George R.R. Martin'}
     ]
     
-    res.render('post.ejs', {posts: posts})
+    res.render('post', {posts: posts, 'pageTitle': pageTitle})
 });
 
 app.get('/favorite_book/:bookName', function(req, res){
+    let pageTitle = 'Favorite Book'
     let bookName = req.params.bookName;
     bookName = removeUnderscore(bookName);
     bookName = toTitleCase(bookName);
 
-    res.render('favorite_book.ejs', {'bookName':bookName});
+    res.render('favorite_book', {'bookName': bookName, 'pageTitle': pageTitle});
 });
 
 
