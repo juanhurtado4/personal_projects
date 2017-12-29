@@ -23,15 +23,15 @@ app.get('/', function(req, res){
     res.render('home.ejs')
 });
 
-app.get('/post', function(req, res){
+app.get('/posts', function(req, res){
     
-    let post = [
+    let posts = [
         {title: 'Harry Potter', author: 'J.K. Rowlin'},
         {title: 'Wild', author: 'Cherryl Strayed'},
         {title: 'Game of Thrones', author: 'George R.R. Martin'}
     ]
     
-    res.render('post.ejs', {'post': post})
+    res.render('post.ejs', {posts: posts})
 });
 
 app.get('/favorite_book/:bookName', function(req, res){
