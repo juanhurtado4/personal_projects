@@ -1,0 +1,14 @@
+{
+  "name": "express_basics2",
+  "version": "1.0.0",
+  "description": "Learning to create package.json and express app from scratch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Hurtado",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
