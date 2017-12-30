@@ -1,4 +1,6 @@
 .DS_Store
 parse_csv
-username_api/.vscode/
-username_api/router.js
+/username_api/.vscode/
+/username_api/router.js
+/express/express_post/node_modules/
+/express/express_post/package-lock.json
