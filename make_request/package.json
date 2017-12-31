@@ -1,0 +1,22 @@
+{
+  "name": "make_request",
+  "version": "1.0.0",
+  "description": "Learning how to make request",
+  "main": "request.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanhurtado4/personal_projects.git"
+  },
+  "author": "Juan Hurtado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanhurtado4/personal_projects/issues"
+  },
+  "homepage": "https://github.com/juanhurtado4/personal_projects#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
