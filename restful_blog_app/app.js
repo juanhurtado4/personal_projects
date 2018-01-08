@@ -34,6 +34,11 @@ app.get('/', function(req, res){
     res.redirect('/blogs')
 })
 
+app.post('/blogs', function(req, res){
+    Blog.create();
+    res.redirect('/blogs')
+})
+
 app.listen('3000', () => {
     console.log('Server listening on port 3000')
 })
